@@ -1,0 +1,100 @@
+--- Found in column: Otros (Especificar)* ---
+Otros (Especificar)*
+PRACTICAS PROFESIONALES    1
+Name: count, dtype: int64
+--- Found in column: Otros (Especificar)4 ---
+Otros (Especificar)4
+practicante                          2
+practicante de famacia               1
+practicante de control de calidad    1
+Jefa de practicas                    1
+jefe de practica de obstetricia      1
+Name: count, dtype: int64
+--- Found in column: Otros (Especificar)5 ---
+Otros (Especificar)5
+PRACTICANTE PROFECIONAL    1
+Name: count, dtype: int64
+--- Found in column: 11.1 ¿Cuál era tu cargo de tu primer trabajo luego de haber egresado? ---
+11.1 ¿Cuál era tu cargo de tu primer trabajo luego de haber egresado?
+practicante                                 11
+Practicante                                  2
+PRACTICANTE                                  2
+PRACTICANTE ADMINISTRATIVA                   1
+practicante pre profesional                  1
+Practicas Pre profesionales                  1
+Practicante de analista de crédito           1
+Practicante de contabilidad                  1
+PRACTICANTE CONTANBLE                        1
+practicante contable                         1
+PRACTICANTE CONTABLE                         1
+practicas profesionales                      1
+practicante pro                              1
+Practicante legal de un estudio jurídico     1
+practicante de derecho                       1
+practicante de ti                            1
+PRACTICANTE  DE SISTEMAS                     1
+Name: count, dtype: int64
+--- Found in column: 13.1 ¿Cuál es la principal razón de la calificación otorgada? (abierta): ---
+13.1 ¿Cuál es la principal razón de la calificación otorgada? (abierta):
+PORQUE COMO QUE DEBERIAN INCENTIVAR BASTANTE QUE TE AYUDEN A HACER PRACTICAS PREPROFESIONALES                                                                                                                                         1
+En lo últimos ciclos no tan bueno para incentivar las practicas                                                                                                                                                                       1
+falta de practicas en computo                                                                                                                                                                                                         1
+PRACTICAS PREPROFIOSIONALES MUY BUENAS                                                                                                                                                                                                1
+ME PERMITIERON HACER PRACTICAS                                                                                                                                                                                                        1
+                                                                                                                                                                                                                                     ..
+Por que me brindaron buenas practicas en mi carrera                                                                                                                                                                                   1
+Por que buen estudio , buenas locaciones de practicas  , buenos licenciados                                                                                                                                                           1
+porque tiene convenios para acceder a descuentos en la universidad.  Destaca las clases, tiene buena malla curricular. Lo negativo es que las practicas de terapia física se realizaban en centros demasiado lejanos y peligrosos.    1
+BUENAS PRACTICAS,NOTUVE PROBLEMAS EN LA MATRICULA                                                                                                                                                                                     1
+EL SUTENTO DE PRACTICAS NO SON EN CENTRO ESPECIALIZADOS DEBERIAN DE MEJORAR ESA PARTE                                                                                                                                                 1
+Name: count, Length: 112, dtype: int64
+--- Found in column: 4.1 ¿Cuál era tu cargo de tu primer trabajo luego de haber egresado? ---
+4.1 ¿Cuál era tu cargo de tu primer trabajo luego de haber egresado?
+practicante                               5
+practicante profesional                   2
+practicante contable                      1
+PRACTICANTE                               1
+PRACTICANTE PROFESIONAL                   1
+Practicante preprofesional se sistemas    1
+PRACTICAMENTE                             1
+Practicante de selección de personal      1
+practicante de psicologia                 1
+PRACTICANTE CLIMA Y CULTURA               1
+Name: count, dtype: int64
+--- Found in column: 6.1 ¿Cuál es la principal razón de la calificación otorgada? (abierta): ---
+6.1 ¿Cuál es la principal razón de la calificación otorgada? (abierta):
+buenos docentes, la universidad es muy conceptual le falta mas practica                                                                                                                                                    1
+practicas profesionales                                                                                                                                                                                                    1
+Por que no respetan los horarios elegidos por lo estudiante , nos proporcionaban practicas hospitalarias                                                                                                                   1
+docentes no cumplian con la enseñanza correctamente, no habia buenas practicas.                                                                                                                                            1
+POR LOS CONVENIOS Y PRACTICAS                                                                                                                                                                                              1
+la cordinacion para las practicas                                                                                                                                                                                          1
+Por que no hay cosas que no están bien , no había practicas en los hospitales todo era en laboratorio                                                                                                                      1
+Por que tuve muchos inconvenientes en las practicas preprofesionales                                                                                                                                                       1
+NO HABIA MATERIALES PARA REALIZAR LAS PRACTICAS                                                                                                                                                                            1
+Por que faltaba practicas demasiadas teorias                                                                                                                                                                               1
+LE FALTA LA PLTAFORMA DE PRACTICA LABORAL                                                                                                                                                                                  1
+por el metodo de enseñanza que es buena y por los recursos como materiales , laboratorios sonde se ponen en practica lo enseñado                                                                                           1
+area administrativa es desorganizado, no rotan en hospitales para las practicas. las practicas se llevan en centrs de salud.                                                                                               1
+tiene buenos convenios y practicas                                                                                                                                                                                         1
+PORQUE DEMORA MUCHO EL PROCESO Y NO HAY COHERENCIA EN LO QUE DICEN, CUANDO ESTABA EN PRACTICA QUERIA VANZAR MI TESIS EN LOS ULTIMOS CICLOS Y LE MENCIONARON QUE NO PODIA HASTA EL DECIMO DE CICLO CON UN CURSO DE TESIS    1
+BUENAS PRACTICA BUENOS DOCENTES                                                                                                                                                                                            1
+Por que tiene docentes  , infraestructura y aéreas de practica                                                                                                                                                             1
+Por que hay buenos docentes y plazas de practicas hospitalarias me ayudado bastante el área no es eficiente                                                                                                                1
+POR FALTA DE PRACTICAS NO HAY CONVENIOS PARA EJERCER LA CARRERA                                                                                                                                                            1
+no habian convenios para las practicas                                                                                                                                                                                     1
+no realizo correctamente sus practicas                                                                                                                                                                                     1
+FALTO MAS PRACTICAS LOS DOCENTES ALGUNOS DESPOTAS                                                                                                                                                                          1
+las imstalaciones, las facilidades en las practicas                                                                                                                                                                        1
+buenos docentes ,faltaron practicas                                                                                                                                                                                        1
+Por que incentivo a la parte practica de la carrera para así tener más experiencia para los trabajos                                                                                                                       1
+mucha teoria muy poca practica                                                                                                                                                                                             1
+buenas practicas                                                                                                                                                                                                           1
+falta de materiales de materiales para la practica                                                                                                                                                                         1
+Siento que le ponen mas enfasis a ciencias de la salud los insertan a trabajos, practicas en mi caso no fue asi                                                                                                            1
+Name: count, dtype: int64
+--- Found in column: Otro (Especificar) ---
+Otro (Especificar)
+deben ser mas practicos, la universidad es muy conceptual    1
+practicas desdes mitad de carrera                            1
+Name: count, dtype: int64

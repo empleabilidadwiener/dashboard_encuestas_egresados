@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Dashboard de Egresados 2026</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/styles.css?v=20260922_bento_grid">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="app-container">
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Barra Superior Móvil (Exclusiva de pantallas móviles) -->
+    <header class="mobile-top-bar" id="mobile-top-bar">
+      <div class="mobile-top-left">
+        <img src="logo-universidad.webp" alt="Wiener" class="mobile-top-logo">
+        <div class="mobile-top-brand-text">
+          <span class="mobile-top-title">Egresados 2026</span>
+          <span class="mobile-top-subtitle">Wiener Alumni</span>
+        </div>
+      </div>
+      <div class="mobile-top-actions">
+        <button type="button" class="mobile-top-btn" id="mobile-btn-instrumento" title="Ver Cuestionario Oficial">
+          <i class="fas fa-clipboard-list"></i>
+          <span>Instrumento</span>
+        </button>
+        <button type="button" class="mobile-top-btn mobile-top-menu-btn" id="mobile-btn-menu" aria-label="Abrir menú">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <button class="sidebar-expand-btn" id="sidebar-expand-btn" title="Mostrar menú lateral (Ctrl+B)"
+      aria-label="Mostrar menú lateral">
+      <i class="fas fa-bars"></i>
+      <span class="expand-btn-text">Menú</span>
+    </button>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-brand">
+          <img src="logo-universidad.webp" alt="Universidad Norbert Wiener" class="sidebar-logo">
+          <button class="sidebar-mobile-close-btn" id="sidebar-mobile-close-btn" aria-label="Cerrar menú lateral">
+            <i class="fas fa-times"></i>
+          </button>
+          <button class="sidebar-collapse-btn" id="sidebar-collapse-btn" title="Ocultar barra lateral (Ctrl+B)"
+            aria-label="Ocultar barra lateral">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+        </div>
+        <h1>Encuestas de Empleabilidad de Egresados 2026</h1>
+        <p>COHORTE 2019 - 2025</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">Análisis Principal</div>
+        <a href="#" class="nav-item active" data-page="resumen">
+          <i class="fas fa-compass"></i>
+          <span>Resumen Ejecutivo</span>
+        </a>
+        <a href="#" class="nav-item" data-page="ocupacion">
+          <i class="fas fa-briefcase"></i>
+          <span>Situación Laboral</span>
+        </a>
+        <a href="#" class="nav-item" data-page="perfil-no-trabaja">
+          <i class="fas fa-user-clock"></i>
+          <span>Perfil No Trabaja</span>
+        </a>
+        <a href="#" class="nav-item" data-page="empleabilidad">
+          <i class="fas fa-chart-line"></i>
+          <span>Empleabilidad</span>
+        </a>
+        <a href="#" class="nav-item" data-page="emprendimientos">
+          <i class="fas fa-store"></i>
+          <span>Emprendimientos</span>
+        </a>
+
+        <div class="nav-section">Análisis Especializados</div>
+        <a href="#" class="nav-item" data-page="resultados-generales">
+          <i class="fas fa-chart-bar"></i>
+          <span>Resultados Generales</span>
+        </a>
+        <a href="#" class="nav-item" data-page="evolutivo"
+          title="Comparativa con las encuestas del año pasado (2025 vs 2026)">
+          <i class="fas fa-chart-area"></i>
+          <span>Análisis Evolutivo</span>
+        </a>
+        <a href="#" class="nav-item" data-page="formacion-continua">
+          <i class="fas fa-graduation-cap"></i>
+          <span>Formación Continua</span>
+        </a>
+
+        <div class="nav-section">Metodología</div>
+        <a href="#" class="nav-item" data-page="metodologia">
+          <i class="fas fa-microscope"></i>
+          <span>Metodología</span>
+        </a>
+
+        <div class="nav-section">Estadística</div>
+        <a href="#" class="nav-item" data-page="margen-error">
+          <i class="fas fa-calculator"></i>
+          <span>Margen de Error</span>
+        </a>
+
+        <div class="nav-section">Cualitativo</div>
+        <a href="#" class="nav-item" data-page="preguntas-abiertas">
+          <i class="fas fa-star"></i>
+          <span>NPS y Cualitativo</span>
+        </a>
+
+        <div class="nav-section">Datos Crudos</div>
+        <a href="#" class="nav-item" data-page="visor-datos">
+          <i class="fas fa-table"></i>
+          <span>Visor de Datos</span>
+        </a>
+        <a href="#" class="nav-item" data-page="representatividad">
+          <i class="fas fa-chart-pie"></i>
+          <span>Ficha Técnica</span>
+        </a>
+
+        <div class="nav-section">Personalización y Control</div>
+        <a href="#" class="nav-item nav-item-editor" id="nav-btn-editor" onclick="Editor.promptAuth(); return false;"
+          title="Activar Modo Edición con clave">
+          <i class="fas fa-edit" style="color: #38bdf8;"></i>
+          <span>Editar Textos</span>
+        </a>
+        <a href="#" class="nav-item nav-item-toggle-view btn-toggle-view-mode" id="nav-btn-toggle-view"
+          onclick="Editor.toggleViewMode(); return false;"
+          title="Alternar entre la versión personalizada y la original">
+          <i class="fas fa-eye" style="color: #fbbf24;"></i>
+          <span id="nav-toggle-view-text">Ver Original</span>
+        </a>
+        <a href="#" class="nav-item nav-item-revert" id="nav-btn-revert"
+          onclick="Editor.revertAllChanges(); return false;"
+          title="Restablecer todos los cambios a la versión original de fábrica">
+          <i class="fas fa-undo" style="color: #f87171;"></i>
+          <span>Restablecer cambios</span>
+        </a>
+        <a href="#" class="nav-item nav-item-restore" id="nav-btn-restore"
+          onclick="Editor.restoreBackedUpEdits(); return false;" title="Volver a restablecer mis ediciones respaldadas">
+          <i class="fas fa-redo" style="color: #34d399;"></i>
+          <span>Volver a mis ediciones</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span class="sidebar-credit-label">Realizado por</span>
+        <div class="sidebar-credit-badge">
+          <img src="emplea_logo_dark.svg" alt="Dirección de Desarrollo Profesional y Alumni" class="sidebar-area-logo">
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="filters-bar hidden" id="filters-bar">
+        <div class="filter-group">
+          <label class="filter-label">Facultad</label>
+          <select class="filter-select" id="filter-facultad">
+            <option value="Todas">Todas las facultades</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">Carrera</label>
+          <select class="filter-select" id="filter-carrera">
+            <option value="Todas">Todas las carreras</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">Año de Egreso</label>
+          <select class="filter-select" id="filter-anio">
+            <option value="Todos">Todos los años</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="load-error" class="empty-state hidden" style="padding: 60px 20px; text-align: center;">
+        <i class="fas fa-exclamation-circle" style="font-size: 48px; color: #ef4444; margin-bottom: 16px;"></i>
+        <h3 style="color: #1e293b; font-size: 20px; margin-bottom: 8px;">No se pudieron cargar los datos</h3>
+        <p style="color: #64748b;">Verifica que los archivos <code>respuestas_encuestas_2026.csv</code> y
+          <code>universo.xlsx</code> existan en la carpeta <code>data/</code>.
+        </p>
+      </div>
+
+      <div id="loading" class="loading hidden">
+        <div class="loading-spinner"></div>
+        <p>Procesando datos...</p>
+      </div>
+
+      <div id="page-content"></div>
+    </main>
+
+    <nav class="bottom-nav" id="bottom-nav">
+      <a href="#" class="bottom-nav-item active" data-page="resumen">
+        <i class="fas fa-compass"></i>
+        <span>Resumen</span>
+      </a>
+      <a href="#" class="bottom-nav-item" data-page="ocupacion">
+        <i class="fas fa-briefcase"></i>
+        <span>Laboral</span>
+      </a>
+      <a href="#" class="bottom-nav-item" data-page="empleabilidad">
+        <i class="fas fa-chart-line"></i>
+        <span>Empleo</span>
+      </a>
+      <a href="#" class="bottom-nav-item" data-page="representatividad">
+        <i class="fas fa-clipboard-check"></i>
+        <span>Ficha</span>
+      </a>
+      <button type="button" class="bottom-nav-item" id="bottom-menu-toggle">
+        <i class="fas fa-th-large"></i>
+        <span>Menú</span>
+      </button>
+    </nav>
+
+    <!-- Modal de Pantalla Completa para Gráficos Grandes y Complejos -->
+    <div id="chart-fullscreen-modal" class="chart-fullscreen-modal" style="display: none;">
+      <div class="chart-fullscreen-backdrop" id="chart-fullscreen-backdrop"></div>
+      <div class="chart-fullscreen-dialog">
+        <div class="chart-fullscreen-header">
+          <div class="chart-fullscreen-title-wrap">
+            <span class="chart-fullscreen-badge"><i class="fas fa-search-plus"></i> Vista Ampliada</span>
+            <h3 id="chart-fullscreen-title" class="chart-fullscreen-title">Gráfico en Pantalla Completa</h3>
+            <p id="chart-fullscreen-subtitle" class="chart-fullscreen-subtitle"></p>
+          </div>
+          <div class="chart-fullscreen-controls">
+            <div class="chart-fullscreen-view-toggle">
+              <button type="button" id="btn-fullscreen-toggle-chart" class="active"><i class="fas fa-chart-bar"></i>
+                <span>Gráfico</span></button>
+              <button type="button" id="btn-fullscreen-toggle-table"><i class="fas fa-table"></i> <span>Tabla y
+                  Mínimos</span></button>
+            </div>
+            <button type="button" id="btn-close-chart-fullscreen" class="chart-fullscreen-close"
+              aria-label="Cerrar vista completa">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="chart-fullscreen-body">
+          <div id="chart-fullscreen-canvas-container" class="chart-fullscreen-canvas-container">
+            <canvas id="canvas-fullscreen-chart"></canvas>
+          </div>
+          <div id="chart-fullscreen-table-container" class="chart-fullscreen-table-container" style="display: none;">
+            <div class="chart-fullscreen-table-info">
+              <i class="fas fa-info-circle"></i> Valores numéricos exactos y porcentajes desglosados, incluyendo los
+              mínimos reducidos (1%, 3%, 4%):
+            </div>
+            <div class="table-responsive">
+              <table class="fullscreen-data-table" id="table-fullscreen-chart"></table>
+            </div>
+          </div>
+        </div>
+        <div class="chart-fullscreen-footer">
+          <span class="chart-fullscreen-hint"><i class="fas fa-mobile-alt"></i> Tip: en móvil puedes girar la pantalla a
+            horizontal para ver barras densas con mayor amplitud</span>
+          <button type="button" class="btn btn-sm btn-secondary" id="btn-close-chart-fullscreen-footer">Cerrar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL GLOBAL DE VISUALIZACIÓN DEL INSTRUMENTO OFICIAL -->
+    <div id="global-modal-instrumento" class="modal-instrumento-wrapper" style="display: none;">
+      <div class="modal-instrumento-backdrop" id="instrumento-modal-backdrop"></div>
+      <div class="modal-instrumento-container">
+        <!-- Header -->
+        <div class="modal-instrumento-header">
+          <div class="modal-instrumento-brand">
+            <span class="modal-instrumento-tag"><i class="fas fa-shield-alt"></i> Instrumento Oficial 2026</span>
+            <h2 class="modal-instrumento-title">Cuestionario Institucional de Seguimiento de Egresados</h2>
+            <p class="modal-instrumento-subtitle">Dirección de Desarrollo Profesional y Alumni · Cohortes 2019 - 2025
+            </p>
+          </div>
+          <button type="button" class="modal-instrumento-close" id="btn-cerrar-instrumento-global"
+            aria-label="Cerrar cuestionario">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <!-- Quick Section Tabs (Sticky on scroll) -->
+        <div class="modal-instrumento-tabs">
+          <button type="button" class="inst-tab-btn active" data-target="inst-sec-filtro">1. Filtro (P1)</button>
+          <button type="button" class="inst-tab-btn" data-target="inst-sec-ocupados">2. Ocupados (Rama A)</button>
+          <button type="button" class="inst-tab-btn" data-target="inst-sec-no-ocupados">3. No Ocupados (Rama B)</button>
+          <button type="button" class="inst-tab-btn" data-target="inst-sec-nps">4. NPS & Posgrado</button>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-instrumento-body" id="modal-instrumento-body">
+          <div class="modal-instrumento-notice">
+            <i class="fas fa-lock"></i>
+            <div>
+              <strong>Marco Legal y Consentimiento Informado:</strong>
+              <span>Tratamiento confidencial según Ley N° 29733 (Protección de Datos Personales) y D.S. N° 003-2013-JUS.
+                Uso exclusivo para investigación institucional y acreditaciones (ACBSP, SINEACE).</span>
+            </div>
+          </div>
+
+          <!-- Section 1 -->
+          <div class="inst-section" id="inst-sec-filtro">
+            <div class="inst-section-title">
+              <span class="inst-num">01</span> Módulo de Identificación y Filtro Principal
+            </div>
+            <div class="inst-card">
+              <div class="inst-badge-q">P1 · Filtro de Condición de Ocupación</div>
+              <p class="inst-question-text">¿Actualmente te encuentras trabajando o realizando una actividad remunerada
+                que genere ingresos?</p>
+              <div class="inst-options-list">
+                <div class="inst-option-item">
+                  <span class="inst-pill-yes">Sí</span>
+                  <span>Continúa hacia la <strong>Rama A (Egresados Ocupados)</strong> — 26 preguntas sobre inserción,
+                    cargo, salario y pertinencia.</span>
+                </div>
+                <div class="inst-option-item">
+                  <span class="inst-pill-no">No</span>
+                  <span>Salta hacia la <strong>Rama B (Egresados No Ocupados)</strong> — Búsqueda activa, razones de
+                    desocupación y apoyo institucional.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2 -->
+          <div class="inst-section" id="inst-sec-ocupados">
+            <div class="inst-section-title">
+              <span class="inst-num">02</span> Rama A: Egresados Ocupados (Condiciones y Calidad del Empleo)
+            </div>
+            <div class="inst-card">
+              <div class="inst-badge-q">P2 · Condición Laboral y Emprendimiento</div>
+              <p class="inst-question-text">¿Cuál es tu situación laboral actual?</p>
+              <div class="inst-suboptions">
+                <span class="inst-tag">Trabajador Dependiente</span>
+                <span class="inst-tag">Profesional Independiente</span>
+                <span class="inst-tag">Emprendedor / Dueño de Negocio</span>
+              </div>
+            </div>
+
+            <div class="inst-card">
+              <div class="inst-badge-q">P2.1 – P2.3 · Formalización y Régimen Contractual</div>
+              <ul class="inst-bullet-list">
+                <li><strong>Tipo de Contrato:</strong> Plazo indeterminado, plazo fijo/sujeto a modalidad, CAS, locación
+                  de servicios / honorarios.</li>
+                <li><strong>RUC Activo:</strong> Formalización tributaria de servicios independientes y empresas
+                  unipersonales.</li>
+                <li><strong>Vínculo del negocio:</strong> Concordancia directa del emprendimiento con la profesión
+                  universitaria estudiada.</li>
+              </ul>
+            </div>
+
+            <div class="inst-card">
+              <div class="inst-badge-q">P3 · Empresa, Sector Económico y Modalidad</div>
+              <ul class="inst-bullet-list">
+                <li><strong>Rubro Económico:</strong> 13 sectores clave (Salud, Educación, Comercio, Tecnología, Banca,
+                  etc.).</li>
+                <li><strong>Sector:</strong> Privado (formal/informal) vs. Público (Estado).</li>
+                <li><strong>Modalidad de Trabajo:</strong> Presencial, Remoto o Híbrido.</li>
+              </ul>
+            </div>
+
+            <div class="inst-card">
+              <div class="inst-badge-q">P3.5 · Nivel Jerárquico del Cargo Actual</div>
+              <p class="inst-desc">Nivel alcanzado según la escala oficial de trayectoria profesional:</p>
+              <div class="inst-badges-wrap">
+                <span class="inst-level-badge level-1">Trainee / Prácticas</span>
+                <span class="inst-level-badge level-2">Experiencia Inicial</span>
+                <span class="inst-level-badge level-3">Junior</span>
+                <span class="inst-level-badge level-4">Semi Senior</span>
+                <span class="inst-level-badge level-5">Senior</span>
+                <span class="inst-level-badge level-6">Jefe / Supervisor / Coordinador</span>
+                <span class="inst-level-badge level-7">Dirección / Gerencia</span>
+                <span class="inst-level-badge level-8">CEO / Fundador</span>
+              </div>
+            </div>
+
+            <div class="inst-card">
+              <div class="inst-badge-q">P4 – P7 · Inserción, Pertinencia y Ascenso</div>
+              <ul class="inst-bullet-list">
+                <li><strong>P5 — Tiempo de Inserción:</strong> Tiempo transcurrido hasta conseguir el primer empleo
+                  (&lt;1 mes, 1-3 meses, 3-6 meses, 6-12 meses, &gt;12 meses).</li>
+                <li><strong>P6 — Pertinencia Laboral declarada:</strong> ¿Tu trabajo se relaciona con tu carrera?
+                  (Totalmente / Parcialmente / No relacionada).</li>
+                <li><strong>P7 — Ascenso Profesional:</strong> Crecimiento laboral conseguido a partir del egreso
+                  universitario.</li>
+                <li><strong>P9 — Rango Salarial Neto:</strong> Desde &lt; S/ 1,130 hasta &gt; S/ 5,000 mensuales.</li>
+                <li><strong>P12 — Satisfacción Laboral:</strong> Muy satisfecho, Satisfecho, Neutral, Insatisfecho, Muy
+                  insatisfecho.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Section 3 -->
+          <div class="inst-section" id="inst-sec-no-ocupados">
+            <div class="inst-section-title">
+              <span class="inst-num">03</span> Rama B: Egresados No Ocupados (Mercado en Búsqueda e Inactivos)
+            </div>
+            <div class="inst-card">
+              <div class="inst-badge-q">P2(No) · Tiempo sin Empleo y Búsqueda Activa</div>
+              <ul class="inst-bullet-list">
+                <li><strong>Tiempo de Desocupación:</strong> Menos de 3 meses, 3 a 6 meses, 6 a 12 meses, más de 1 año,
+                  aún no ha trabajado.</li>
+                <li><strong>P4(No) — Búsqueda Activa (PEA vs. No PEA):</strong> Postulación activa a vacantes en las
+                  últimas 4 semanas.</li>
+              </ul>
+            </div>
+
+            <div class="inst-card">
+              <div class="inst-badge-q">P3(No) · Motivo Principal de No Ocupación</div>
+              <div class="inst-suboptions">
+                <span class="inst-tag">Cuidado de hijos o familiares</span>
+                <span class="inst-tag">Estudios de posgrado / segunda carrera</span>
+                <span class="inst-tag">Búsqueda activa sin encontrar vacante afín</span>
+                <span class="inst-tag">Trámite de titulación / colegiatura</span>
+                <span class="inst-tag">Iniciando emprendimiento</span>
+                <span class="inst-tag">Salud personal / Otros</span>
+              </div>
+            </div>
+
+            <div class="inst-card">
+              <div class="inst-badge-q">P5(No) · Soporte y Servicios Solicitados a la Universidad</div>
+              <p class="inst-desc">Bolsa de trabajo exclusiva Wiener, ferias laborales virtuales y presenciales,
+                talleres de preparación para entrevistas, mentoría y asesoría para optimización de CV.</p>
+            </div>
+          </div>
+
+          <!-- Section 4 -->
+          <div class="inst-section" id="inst-sec-nps">
+            <div class="inst-section-title">
+              <span class="inst-num">04</span> Módulo Transversal: Fidelización Alumni y Net Promoter Score (NPS)
+            </div>
+            <div class="inst-card">
+              <div class="inst-badge-q">P13 / P6(No) · Net Promoter Score Institucional (NPS)</div>
+              <p class="inst-question-text">¿Qué tan probable es que recomiendes a la Universidad Norbert Wiener a un
+                familiar, colega o amigo? (Escala 0 al 10)</p>
+              <div class="inst-nps-scale">
+                <div class="nps-zone det"><span>0-6</span> Detractores</div>
+                <div class="nps-zone pas"><span>7-8</span> Pasivos</div>
+                <div class="nps-zone pro"><span>9-10</span> Promotores</div>
+              </div>
+            </div>
+
+            <div class="inst-card">
+              <div class="inst-badge-q">Pregunta Cualitativa Abierta</div>
+              <p class="inst-question-text">¿Cuál es el motivo principal de tu calificación otorgada?</p>
+              <p class="inst-desc">Comentario libre transcrito íntegramente para análisis semántico, sentimiento de
+                marca y feedback directo de la comunidad egresada.</p>
+            </div>
+
+            <div class="inst-card">
+              <div class="inst-badge-q">Formación Continua y Red Alumni</div>
+              <ul class="inst-bullet-list">
+                <li><strong>Posgrados de Interés:</strong> Áreas de especialización, maestrías y diplomados prioritarios
+                  para el egresado.</li>
+                <li><strong>Estado de Colegiatura:</strong> Colegiado habilitado / en trámite / no requiere.</li>
+                <li><strong>Beneficios Alumni:</strong> Acceso a bases de datos científicas, eventos de networking,
+                  bolsa laboral continua.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="modal-instrumento-footer">
+          <div class="modal-instrumento-footer-info">
+            <i class="fas fa-check-circle" style="color: #07C8CC;"></i> Documento institucional normado para
+            acreditación SINEACE y ACBSP
+          </div>
+          <button type="button" class="btn btn-primary" id="btn-cerrar-instrumento-global-footer"
+            style="background: #07C8CC; border-color: #07C8CC; color: #0a1b44; font-weight: 700; border-radius: 8px; padding: 8px 24px;">
+            Entendido, cerrar cuestionario
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/vendor/chart.umd.min.js"></script>
+  <script src="js/vendor/xlsx.full.min.js"></script>
+  <script src="js/vendor/html2canvas.min.js"></script>
+  <script src="js/dataCleaner.js?v=20261106_npsorder_v3"></script>
+  <script src="js/dataLoader.js?v=20261106_npsorder_v3"></script>
+  <script src="js/calculations.js?v=20261106_npsorder_v3"></script>
+  <script src="js/kpiCatalog.js?v=20261106_npsorder_v3"></script>
+  <script src="js/charts.js?v=20261106_npsorder_v3"></script>
+  <script src="js/pivotEngine.js?v=20261106_npsorder_v3"></script>
+  <script>
+    window.ENV = window.ENV || {};
+    if (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
+      const s = document.createElement('script');
+      s.src = 'js/env.js?v=20261106_npsorder_v3';
+      document.head.appendChild(s);
+    }
+  </script>
+  <script src="js/editor.js?v=20261106_npsorder_v3"></script>
+  <script src="js/exports.js?v=20261106_npsorder_v3"></script>
+  <script type="module" src="js/app.js?v=20261106_npsorder_v3"></script>
+</body>
+
+</html>
